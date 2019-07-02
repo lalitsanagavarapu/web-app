@@ -20,7 +20,7 @@ npm install -g @angular/cli@6.2.3
 
 3. Clone the project locally into your system.
 ```
-git clone https://github.com/openMF/web-app.git
+git clone https://github.com/SupreethSudhakaranMenon/web-app.git
 ```
 
 4. `cd` into project root directory and make sure you are on the master branch.
