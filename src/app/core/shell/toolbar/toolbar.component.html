@@ -34,7 +34,11 @@
         <fa-icon class="mr-05" icon="users" size="lg"></fa-icon>
         Self Service
       </a>
-
+      <a mat-tab-link class="tab-link" [matMenuTriggerFor]="scorecardMenu" #scorecardMenuTrigger="matMenuTrigger">
+        <fa-icon class="mr-05" icon="money-bill-alt" size="lg"></fa-icon>
+        Scorecard
+      </a>
+      
     </span>
 
   </nav>
@@ -85,6 +89,7 @@
     <button mat-menu-item [matMenuTriggerFor]="reportsMenu">Reports</button>
     <button mat-menu-item [matMenuTriggerFor]="adminMenu">Admin</button>
     <button mat-menu-item [matMenuTriggerFor]="selfServiceMenu">Self Service</button>
+    <button mat-menu-item [matMenuTriggerFor]="scorecardMenu">Scorecard</button>
   </span>
 </mat-menu>
 
@@ -111,6 +116,11 @@
   <button mat-menu-item [routerLink]="['/self-service/users']">User Management</button>
   <button mat-menu-item [routerLink]="['/self-service/app-configuration']">App Configuration</button>
   <button mat-menu-item [routerLink]="['/self-service/task-management']">Task Management</button>
+</mat-menu>
+
+<mat-menu #scorecardMenu="matMenu" [overlapTrigger]="false">
+  <button mat-menu-item [routerLink]="['/scorecard/feature']">Feature</button>
+  <button mat-menu-item>Configuration</button>
 </mat-menu>
 
 <!-- Application User Help Menu -->
