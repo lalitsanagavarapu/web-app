@@ -1,13 +1,13 @@
 import { ScorecardModule } from './scorecard.module';
 
 describe('ScorecardModule', () => {
-  let selfServiceModule: ScorecardModule;
+  let scorecardModule: ScorecardModule;
 
   beforeEach(() => {
-    selfServiceModule = new ScorecardModule();
+    scorecardModule = new ScorecardModule();
   });
 
   it('should create an instance', () => {
-    expect(selfServiceModule).toBeTruthy();
+    expect(scorecardModule).toBeTruthy();
   });
 });

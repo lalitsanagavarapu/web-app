@@ -2,9 +2,9 @@
 import { Component, OnInit } from '@angular/core';
 
 /**
- * Self service component.
+ * Scorecard component.
  *
- * All components related to self service admin portal are routed here.
+ * All components related to scorecard are routed here.
  */
 @Component({
   selector: 'mifosx-scorecard',

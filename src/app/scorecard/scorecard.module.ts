@@ -3,15 +3,17 @@ import { NgModule } from '@angular/core';
 
 /** Custom Modules */
 import { SharedModule } from '../shared/shared.module';
+import { ScorecardRoutingModule } from './scorecard-routing.module'
 
 /** Custom Components */
 import { ScorecardComponent } from './scorecard.component';
+import { FeatureComponent } from './feature/feature.component';
 
 
 /**
- * Self Service Module
+ * Scorecard Module
  *
- * All components related to self service admin portal functions should be declared here.
+ * All components related to scorecard functions should be declared here.
  */
 @NgModule({
   imports: [
@@ -20,6 +22,7 @@ import { ScorecardComponent } from './scorecard.component';
   ],
   declarations: [
     ScorecardComponent,
+    FeatureComponent
   ]
 })
-export class ScorecardRoutingModule { }
+export class ScorecardModule { }

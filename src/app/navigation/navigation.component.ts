@@ -11,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
+  genderData = ['Male', 'Female'];
+  
   constructor() { }
 
   ngOnInit() {
