@@ -34,6 +34,7 @@ import { SelfServiceModule } from './self-service/self-service.module';
 import { SystemModule } from './system/system.module';
 import { ProductsModule } from './products/products.module';
 import { FeatureModule } from './feature/feature.module';
+import { ConfigurationModule } from './configuration/configuration.module';
 
 
 /** Main Routing Module */
@@ -58,6 +59,7 @@ import { AppRoutingModule } from './app-routing.module';
     SettingsModule,
     NavigationModule,
     FeatureModule,
+    ConfigurationModule,
     ClientsModule,
     GroupsModule,
     CentersModule,
