@@ -1,0 +1,65 @@
+<div class="container">
+
+    <!-- <p>
+      TODO: navigation component.
+    </p> -->
+    
+    <mat-card>
+    <form>
+        <div fxLayout="row wrap" fxLayoutGap="2%" fxLayout.lt-md="column">
+          <mat-form-field fxFlex="48%">
+            <mat-label>Feature</mat-label>
+            <input type="text" matInput>
+          </mat-form-field>
+  
+          <span fxFlex="48%" fxHide.lt-md></span>
+  
+          <mat-form-field fxFlex="48%">
+            <mat-label>Value Type</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let value of valueData" [value]="value">
+                {{ value }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <span fxFlex="48%" fxHide.lt-md></span>
+  
+          <mat-form-field fxFlex="48%">
+            <mat-label>Data Type</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let data of dataData" [value]="data">
+                {{ data }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <span fxFlex="48%" fxHide.lt-md></span>
+  
+          <mat-form-field fxFlex="48%">
+            <mat-label>Category</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let category of categoryData" [value]="category">
+                {{ category }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <span fxFlex="48%" fxHide.lt-md></span>
+
+          <div fxFlex="18%">
+            <mat-checkbox labelPosition="before">Status</mat-checkbox>
+          </div>
+
+        </div> 
+
+        <mat-card-actions fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="5px">
+          <button type="button" mat-raised-button [routerLink]="['../']">Cancel</button>
+          <button mat-raised-button color="primary">Submit</button>
+        </mat-card-actions>
+
+    </form>
+    </mat-card>
+  
+  </div>
+  
