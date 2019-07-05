@@ -50,12 +50,25 @@
               </mat-select>
           </mat-form-field>
 
-          <mat-form-field fxFlex="28%">
-            <mat-label>Score Range</mat-label>
-            <input type="number" matInput>
+          <mat-form-field fxFlex="20%">
+            <mat-label>Score Range(min.)</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let min of minData" [value]="min">
+                  {{ min }}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
 
-          <span fxFlex="48%" fxHide.lt-md></span>
+          <mat-form-field fxFlex="20%">
+            <mat-label>Score Range(max.)</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let max of maxData" [value]="max">
+                  {{ max }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <span fxFlex="88%" fxHide.lt-md></span>
 
           <mat-form-field fxFlex="18%">
             <mat-label>Colour</mat-label>
@@ -66,12 +79,25 @@
               </mat-select>
           </mat-form-field>
 
-          <mat-form-field fxFlex="28%">
-            <mat-label>Score Range</mat-label>
-            <input type="number" matInput>
+          <mat-form-field fxFlex="20%">
+            <mat-label>Score Range(min.)</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let min of minData" [value]="min">
+                  {{ min }}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
 
-          <span fxFlex="48%" fxHide.lt-md></span>
+          <mat-form-field fxFlex="20%">
+            <mat-label>Score Range(max.)</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let max of maxData" [value]="max">
+                  {{ max }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <span fxFlex="88%" fxHide.lt-md></span>
 
           <mat-form-field fxFlex="18%">
             <mat-label>Colour</mat-label>
@@ -82,10 +108,25 @@
               </mat-select>
           </mat-form-field>
 
-          <mat-form-field fxFlex="28%">
-            <mat-label>Score Range</mat-label>
-            <input type="number" matInput>
+          <mat-form-field fxFlex="20%">
+            <mat-label>Score Range(min.)</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let min of minData" [value]="min">
+                  {{ min }}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
+
+          <mat-form-field fxFlex="20%">
+            <mat-label>Score Range(max.)</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let max of maxData" [value]="max">
+                  {{ max }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          
 
         </div> 
 

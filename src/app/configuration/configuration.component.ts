@@ -22,6 +22,13 @@ export class ConfigurationComponent implements OnInit {
   colour2Data = ['Amber'];
 
   colour3Data = ['Red'];
+
+  minData = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+
+  maxData = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+ 
+
+  
   
   constructor() { }
 
