@@ -131,6 +131,8 @@
         </div> 
 
         <mat-card-actions fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="5px">
+          <!-- Here GET used for getting Configuration Detials Page -->
+          <button mat-raised-button color="accent" [routerLink]="['/configurationdetails']">Get</button>
           <button type="button" mat-raised-button [routerLink]="['../']">Cancel</button>
           <button mat-raised-button color="primary">Submit</button>
         </mat-card-actions>

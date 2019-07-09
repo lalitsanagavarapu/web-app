@@ -20,6 +20,6 @@ import { FeaturedetailsComponent } from './featuredetails.component';
   ],
   declarations: [
     FeaturedetailsComponent
-  ]
+  ],
 })
 export class FeaturedetailsModule { }

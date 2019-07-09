@@ -55,6 +55,8 @@
         </div> 
 
         <mat-card-actions fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="5px">
+          <!-- Here GET used for getting Feature Details Page -->
+          <button mat-raised-button color="accent" [routerLink]="['/featuredetails']">Get</button>
           <button type="button" mat-raised-button [routerLink]="['../']">Cancel</button>
           <button mat-raised-button color="primary">Submit</button>
         </mat-card-actions>
