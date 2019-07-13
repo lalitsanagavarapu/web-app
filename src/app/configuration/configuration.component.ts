@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 
 /**
- * Configuration component. (by office)
+ * Configuration component.
  */
 @Component({
   selector: 'mifosx-configuration',
@@ -33,6 +33,7 @@ export class ConfigurationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

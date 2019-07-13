@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 
 /**
- * Navigation component. (by office)
+ * Create Feature Component
  */
 @Component({
   selector: 'mifosx-feature',
@@ -10,7 +10,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feature.component.scss']
 })
 export class FeatureComponent implements OnInit {
-
 
   valueData = ['Binary', 'Nominal', 'Interval', 'Ratio'];
 
@@ -21,6 +20,6 @@ export class FeatureComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
 
+  }
 }
