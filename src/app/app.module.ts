@@ -37,6 +37,7 @@ import { FeatureModule } from './feature/feature.module';
 import { FeaturedetailsModule } from './featuredetails/featuredetails.module';
 import { ConfigurationModule } from './configuration/configuration.module';
 import { ConfigurationdetailsModule } from './configurationdetails/configurationdetails.module';
+import { CriteriaModule } from './criteria/criteria.module';
 
 
 /** Main Routing Module */
@@ -64,6 +65,7 @@ import { AppRoutingModule } from './app-routing.module';
     FeaturedetailsModule,
     ConfigurationModule,
     ConfigurationdetailsModule,
+    CriteriaModule,
     ClientsModule,
     GroupsModule,
     CentersModule,

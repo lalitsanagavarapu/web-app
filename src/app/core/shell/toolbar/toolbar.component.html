@@ -38,6 +38,10 @@
         <fa-icon class="mr-05" icon="table" size="lg"></fa-icon>
         Scorecard
       </a>
+      <a mat-tab-link class="tab-link" [matMenuTriggerFor]="detailsMenu" #detailsMenuTrigger="matMenuTrigger">
+        <fa-icon class="mr-05" icon="table" size="lg"></fa-icon>
+        Details
+      </a>
       
     </span>
 
@@ -120,9 +124,16 @@
 
 <mat-menu #scorecardMenu="matMenu" [overlapTrigger]="false">
   <button mat-menu-item [routerLink]="['/feature']">Create Feature</button>
-  <button mat-menu-item [routerLink]="['/featuredetails']">Feature Details</button>
+  <!-- <button mat-menu-item [routerLink]="['/featuredetails']">Feature Details</button> -->
   <button mat-menu-item [routerLink]="['/configuration']">Create Configuration</button>
+  <!-- <button mat-menu-item [routerLink]="['/configurationdetails']">Configuration Details</button> -->
+  <button mat-menu-item [routerLink]="['/criteria']">Create Criteria</button>
+</mat-menu>
+
+<mat-menu #detailsMenu="matMenu" [overlapTrigger]="false">
+  <button mat-menu-item [routerLink]="['/featuredetails']">Feature Details</button>
   <button mat-menu-item [routerLink]="['/configurationdetails']">Configuration Details</button>
+  <button mat-menu-item [routerLink]="['/criteriadetails']">Criteria Details</button>
 </mat-menu>
 
 <!-- Application User Help Menu -->
