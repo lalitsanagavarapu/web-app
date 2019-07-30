@@ -1,0 +1,27 @@
+
+<div class="container m-b-20" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="end" fxLayoutGap="20px">
+    <!-- TODO: Update to show only Activate/Inactivate button at a time according to selection in table. -->
+    <button mat-raised-button color="accent">
+      <fa-icon icon="lock-open"></fa-icon>&nbsp;&nbsp;
+      Active
+    </button>
+    <button mat-raised-button color="warn">
+      <fa-icon icon="lock"></fa-icon>&nbsp;&nbsp;
+      Inactive
+    </button>
+    <button mat-raised-button color="primary" [routerLink]="['/criteria']">
+      <fa-icon icon="plus"></fa-icon>&nbsp;&nbsp;
+      Create Criteria
+    </button>
+  </div>
+
+  <div class="container">
+
+      <div fxLayout="row">
+        <mat-form-field fxFlex>
+          <mat-label>Filter</mat-label>
+          <input matInput type="text" (keyup)="applyFilter($event.target.value)">
+        </mat-form-field>
+    </div>
+
+  </div>    
