@@ -19,7 +19,7 @@ import { FeatureComponent } from './feature.component';
     FeatureRoutingModule
   ],
   declarations: [
-    FeatureComponent
+    FeatureComponent,
   ]
 })
 export class FeatureModule { }
