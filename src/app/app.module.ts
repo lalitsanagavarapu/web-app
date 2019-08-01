@@ -39,6 +39,7 @@ import { ConfigurationModule } from './configuration/configuration.module';
 import { ConfigurationdetailsModule } from './configurationdetails/configurationdetails.module';
 import { CriteriaModule } from './criteria/criteria.module';
 import { CriteriadetailsModule } from './criteriadetails/criteriadetails.module';
+import { ScorecardModule } from './scorecard/scorecard.module';
 
 
 /** Main Routing Module */
@@ -68,6 +69,7 @@ import { AppRoutingModule } from './app-routing.module';
     ConfigurationdetailsModule,
     CriteriaModule,
     CriteriadetailsModule,
+    ScorecardModule,
     ClientsModule,
     GroupsModule,
     CentersModule,
