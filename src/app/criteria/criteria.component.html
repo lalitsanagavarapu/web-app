@@ -2,11 +2,20 @@
     <mat-card>
         <form>
             <div fxLayout="row wrap" fxLayoutGap="2%" fxLayout.lt-md="column">
-                <mat-label>Data Source</mat-label>
+                <!-- <mat-label>Data Source</mat-label>
                 <mat-radio-group fxLayout="row" fxLayoutGap="20px">
                     <mat-radio-button *ngFor="let data of dataSource" [value]="data">
                         {{ data }}
                     </mat-radio-button>
+                </mat-radio-group>
+
+                <span fxFlex="48%" fxHide.lt-md></span> -->
+
+                <mat-label>Data Source</mat-label>
+                <mat-radio-group fxLayout="row" fxLayoutGap="20px">
+                    <mat-radio-button value="XML">XML</mat-radio-button>
+                    <mat-radio-button value="JSON">JSON</mat-radio-button>
+                    <mat-radio-button value="SQL">SQL</mat-radio-button>
                 </mat-radio-group>
 
                 <span fxFlex="48%" fxHide.lt-md></span>
@@ -43,8 +52,8 @@
 
                 <span fxFlex="38%" fxHide.lt-md></span>
 
-                <button mat-raised-button (click)="addColumn()"> Add Column </button>
-                <button mat-raised-button (click)="removeColumn()"> Remove Column </button>
+                <button mat-raised-button (click)="addColumn()"> Add Row </button>
+                <button mat-raised-button (click)="removeColumn()"> Remove Row </button>
 
                
 

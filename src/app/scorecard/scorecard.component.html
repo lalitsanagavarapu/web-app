@@ -1,1 +1,51 @@
-<h1> It works !!! </h1>
+<div class="container">
+    <mat-card>
+        <form>
+            <div fxLayout="row wrap" fxLayoutGap="2%" fxLayout.lt-md="column">
+                <mat-form-field fxFlex="48%">
+                    <mat-label>Loan Id</mat-label>
+                    <input type="text" matInput>
+                </mat-form-field>
+
+                <span fxFlex="48%" fxHide.lt-md></span>
+
+                <!-- <mat-label>Model</mat-label>
+                <mat-radio-group fxLayout="row" fxLayoutGap="20px">
+                    <mat-radio-button *ngFor="let data of model" [value]="data">
+                        {{ data }}
+                    </mat-radio-button>
+                </mat-radio-group>
+
+                <span fxFlex="28%" fxHide.lt-md></span> -->
+
+                <mat-label>Model</mat-label>
+                <mat-radio-group fxLayout="row" fxLayoutGap="20px">
+                    <mat-radio-button value="Criteria">Criteria</mat-radio-button>
+                    <mat-radio-button value="Statistical">Statistical</mat-radio-button>
+                    <mat-radio-button value="Machine Learning">Machine Learning</mat-radio-button>
+                </mat-radio-group>
+
+                <span fxFlex="28%" fxHide.lt-md></span>
+
+                <table mat-table [dataSource]="data" class="mat-elevation-z8">
+                    <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+                        <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+                        <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+                </table>
+
+                <span fxFlex="38%" fxHide.lt-md></span>
+
+            </div>
+            <mat-card-actions fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="5px">
+                <button mat-raised-button color="accent" [routerLink]="['/scorecard']">Get</button>
+                <button type="button" mat-raised-button [routerLink]="['../']">Cancel</button>
+                <button mat-raised-button color="primary">Submit</button>
+            </mat-card-actions>
+
+        </form>
+    </mat-card>
+</div>

@@ -11,6 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScorecardComponent implements OnInit {
 
+  model = ['Criteria', 'Statistical', 'Machine Learning'];
+
+  displayedColumns: string[] = ['Category', 'Characteristic', 'Score'];
+
+  columnsToDisplay: string[] = this.displayedColumns.slice();
+
+  data: PeriodicElement[] = ELEMENT_DATA;
+
   constructor() { }
 
   ngOnInit() {
@@ -18,5 +26,15 @@ export class ScorecardComponent implements OnInit {
   }
 }
 
+export interface PeriodicElement {
+  Category: string;
+  Characteristic: string;
+  Score: string;
+}
 
 
+const ELEMENT_DATA: PeriodicElement[] = [
+  {Score: '28', Characteristic: 'Age', Category: 'Individual'},
+  {Score: '4.5', Characteristic: 'Charac2', Category: '' },
+  {Score: 'Agriculture', Characteristic: 'Charac3', Category: ''}
+];
