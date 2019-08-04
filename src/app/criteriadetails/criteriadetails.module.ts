@@ -9,9 +9,9 @@ import { CriteriadetailsRoutingModule } from './criteriadetails-routing.module';
 import { CriteriadetailsComponent } from './criteriadetails.component';
 
 /**
- * Configuration Module
+ * Criteria Details Module
  *
- * Configuration components should be declared here.
+ * Criteria Details components should be declared here.
  */
 @NgModule({
   imports: [

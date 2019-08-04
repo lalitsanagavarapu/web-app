@@ -13,25 +13,25 @@ export class CriteriaComponent implements OnInit {
 
   dataSource = ['XML', 'JSON', 'SQL'];
 
+  productData = ['Agriculture', 'Personal', 'Capital', 'Ratio'];
+
+  categoryData = ['Individual', 'Organisation', 'Country', 'CreditHistory', 'Loan'];
+
+  featureData = ['Age', 'Income', 'Gender'];
+
   displayedColumns: string[] = ['Criteria', 'Score'];
 
   columnsToDisplay: string[] = this.displayedColumns.slice();
 
   data: PeriodicElement[] = ELEMENT_DATA;
 
-  addColumn() {
+  addRow() {
     const randomColumn = Math.floor(Math.random() *
     this.displayedColumns.length);
     this.columnsToDisplay.push(this.displayedColumns[randomColumn]);
   }
 
-  // addRow() {
-  //   const randomRow = Math.floor(Math.random() *
-  //   this.displayedRows.length);
-  //   this.rowsToDisplay.push(this.displayedRows[randomRow]);
-  // }
-
-  removeColumn() {
+  removeRow() {
     if(this.columnsToDisplay.length) {
       this.columnsToDisplay.pop();
     }

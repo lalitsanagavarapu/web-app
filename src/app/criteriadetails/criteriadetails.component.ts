@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 
 /**
- * Criteria component. (by office)
+ * Criteria component. 
  */
 @Component({
   selector: 'mifosx-criteriadetails',

@@ -20,6 +20,41 @@
 
                 <span fxFlex="48%" fxHide.lt-md></span>
 
+
+                <mat-form-field fxFlex="24%">
+                    <mat-label>Product</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let product of productData" [value]="product">
+                        {{ product }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                <span fxFlex="4%" fxHide.lt-md></span>
+
+                <mat-form-field fxFlex="24%">
+                    <mat-label>Feature</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let feature of featureData" [value]="feature">
+                        {{ feature }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                
+
+                <span fxFlex="4%" fxHide.lt-md></span>
+
+                <mat-form-field fxFlex="24%">
+                    <mat-label>Category</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let category of categoryData" [value]="category">
+                        {{ category }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                <span fxFlex="58%" fxHide.lt-md></span> 
+
                 <mat-form-field fxFlex="48%">
                     <mat-label>SQL/API</mat-label>
                     <input type="textarea" matInput>
@@ -52,8 +87,8 @@
 
                 <span fxFlex="38%" fxHide.lt-md></span>
 
-                <button mat-raised-button (click)="addColumn()"> Add Row </button>
-                <button mat-raised-button (click)="removeColumn()"> Remove Row </button>
+                <button mat-raised-button (click)="addRow()"> Add Row </button>
+                <button mat-raised-button (click)="removeRow()"> Remove Row </button>
 
                
 

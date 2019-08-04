@@ -9,9 +9,9 @@ import { FeaturedetailsRoutingModule } from './featuredetails-routing.module';
 import { FeaturedetailsComponent } from './featuredetails.component';
 
 /**
- * Feature Module
+ * Feature Details Module
  *
- * Feature components should be declared here.
+ * Feature Details components should be declared here.
  */
 @NgModule({
   imports: [
