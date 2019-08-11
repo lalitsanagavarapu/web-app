@@ -9,16 +9,7 @@
 
                 <span fxFlex="48%" fxHide.lt-md></span>
 
-                <!-- <mat-label>Model</mat-label>
-                <mat-radio-group fxLayout="row" fxLayoutGap="20px">
-                    <mat-radio-button *ngFor="let data of model" [value]="data">
-                        {{ data }}
-                    </mat-radio-button>
-                </mat-radio-group>
-
-                <span fxFlex="28%" fxHide.lt-md></span> -->
-
-                <mat-label>Model</mat-label>
+                 <mat-label>Model</mat-label>
                 <mat-radio-group fxLayout="row" fxLayoutGap="20px">
                     <mat-radio-button value="Criteria">Criteria</mat-radio-button>
                     <mat-radio-button value="Statistical">Statistical</mat-radio-button>
@@ -35,6 +26,7 @@
 
                     <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
                     <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+                    
                 </table>
 
                 <span fxFlex="38%" fxHide.lt-md></span>

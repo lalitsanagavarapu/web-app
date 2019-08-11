@@ -13,7 +13,7 @@ export class ScorecardComponent implements OnInit {
 
   model = ['Criteria', 'Statistical', 'Machine Learning'];
 
-  displayedColumns: string[] = ['Category', 'Characteristic', 'Score'];
+  displayedColumns: string[] = ['Category', 'Feature', 'Score'];
 
   columnsToDisplay: string[] = this.displayedColumns.slice();
 
@@ -28,13 +28,13 @@ export class ScorecardComponent implements OnInit {
 
 export interface PeriodicElement {
   Category: string;
-  Characteristic: string;
+  Feature: string;
   Score: string;
 }
 
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {Score: '28', Characteristic: 'Age', Category: 'Individual'},
-  {Score: '4.5', Characteristic: 'Charac2', Category: '' },
-  {Score: 'Agriculture', Characteristic: 'Charac3', Category: ''}
+  {Score: '28', Feature: 'Age', Category: 'Individual'},
+  {Score: '4.5', Feature: 'Charac2', Category: '' },
+  {Score: 'Agriculture', Feature: 'Charac3', Category: ''}
 ];

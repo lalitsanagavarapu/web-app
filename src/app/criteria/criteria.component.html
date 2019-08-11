@@ -2,36 +2,7 @@
     <mat-card>
         <form>
             <div fxLayout="row wrap" fxLayoutGap="2%" fxLayout.lt-md="column">
-                <!-- <mat-label>Data Source</mat-label>
-                <mat-radio-group fxLayout="row" fxLayoutGap="20px">
-                    <mat-radio-button *ngFor="let data of dataSource" [value]="data">
-                        {{ data }}
-                    </mat-radio-button>
-                </mat-radio-group>
-
-                <span fxFlex="48%" fxHide.lt-md></span> -->
-
-                <mat-label>Data Source</mat-label>
-                <mat-radio-group fxLayout="row" fxLayoutGap="20px">
-                    <mat-radio-button value="XML">XML</mat-radio-button>
-                    <mat-radio-button value="JSON">JSON</mat-radio-button>
-                    <mat-radio-button value="SQL">SQL</mat-radio-button>
-                </mat-radio-group>
-
-                <span fxFlex="48%" fxHide.lt-md></span>
-
-
-                <mat-form-field fxFlex="24%">
-                    <mat-label>Product</mat-label>
-                    <mat-select>
-                      <mat-option *ngFor="let product of productData" [value]="product">
-                        {{ product }}
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-
-                <span fxFlex="4%" fxHide.lt-md></span>
-
+              
                 <mat-form-field fxFlex="24%">
                     <mat-label>Feature</mat-label>
                     <mat-select>
@@ -40,7 +11,6 @@
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
-                
 
                 <span fxFlex="4%" fxHide.lt-md></span>
 
@@ -52,8 +22,30 @@
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
+                
 
-                <span fxFlex="58%" fxHide.lt-md></span> 
+                <span fxFlex="4%" fxHide.lt-md></span>
+
+                <mat-form-field fxFlex="24%">
+                    <mat-label>Product</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let product of productData" [value]="product">
+                        {{ product }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                <span fxFlex="90%" fxHide.lt-md></span> 
+
+                <mat-label>Data Source</mat-label>
+                <mat-radio-group fxLayout="row" fxLayoutGap="20px">
+                    <mat-radio-button value="XML">XML</mat-radio-button>
+                    <mat-radio-button value="JSON">JSON</mat-radio-button>
+                    <mat-radio-button value="SQL">SQL</mat-radio-button>
+                </mat-radio-group>
+
+                <span fxFlex="48%" fxHide.lt-md></span>
+
 
                 <mat-form-field fxFlex="48%">
                     <mat-label>SQL/API</mat-label>

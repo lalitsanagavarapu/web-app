@@ -8,18 +8,18 @@
     <form>
         <div fxLayout="row wrap" fxLayoutGap="2%" fxLayout.lt-md="column">
           
-          <mat-form-field fxFlex="48%">
-            <mat-label>Product</mat-label>
+          <mat-form-field fxFlex="24%">
+            <mat-label>Feature</mat-label>
             <mat-select>
-              <mat-option *ngFor="let product of productData" [value]="product">
-                {{ product }}
+              <mat-option *ngFor="let feature of featureData" [value]="feature">
+                {{ feature }}
               </mat-option>
             </mat-select>
           </mat-form-field>
   
-          <span fxFlex="48%" fxHide.lt-md></span>
+          <span fxFlex="4%" fxHide.lt-md></span>
   
-          <mat-form-field fxFlex="48%">
+          <mat-form-field fxFlex="24%">
             <mat-label>Category</mat-label>
             <mat-select>
               <mat-option *ngFor="let category of categoryData" [value]="category">
@@ -28,24 +28,24 @@
             </mat-select>
           </mat-form-field>
   
-          <span fxFlex="48%" fxHide.lt-md></span>
+          <span fxFlex="4%" fxHide.lt-md></span>
   
-          <mat-form-field fxFlex="48%">
-            <mat-label>Feature</mat-label>
+          <mat-form-field fxFlex="24%">
+            <mat-label>Product</mat-label>
             <mat-select>
-              <mat-option *ngFor="let feature of featureData" [value]="feature">
-                {{ feature }}
+              <mat-option *ngFor="let product of productData" [value]="product">
+                {{ product }}
               </mat-option>
             </mat-select>
           </mat-form-field>
 
-          <span fxFlex="48%" fxHide.lt-md></span>
+          <span fxFlex="88%" fxHide.lt-md></span>
 
           <mat-form-field fxFlex="28%">
             <mat-label>Weightage</mat-label>
             <input type="number" matInput>
           </mat-form-field>
-          *Range : 0.0 - 1.0
+          * Range : 0.0 - 1.0
 
           
 
