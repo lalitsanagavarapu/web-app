@@ -37,10 +37,22 @@ export class CriteriaComponent implements OnInit {
     }
   }
 
+  public criteriaObject = {
+    feature: '',
+    category: '',
+    product: '',
+    datasource: '',
+    key: '',
+    sqlapi : ''
+  };
   constructor() { }
 
   ngOnInit() {
 
+  }
+
+  public submitFeature(){
+    console.log(JSON.stringify(this.criteriaObject));
   }
 }
 

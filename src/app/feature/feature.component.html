@@ -4,14 +4,14 @@
         <div fxLayout="row wrap" fxLayoutGap="2%" fxLayout.lt-md="column">
           <mat-form-field fxFlex="48%">
             <mat-label>Feature</mat-label>
-            <input type="text" matInput>
+            <input type="text" matInput [(ngModel)] = "featureObject.feature" name="feature">
           </mat-form-field>
   
           <span fxFlex="48%" fxHide.lt-md></span>
 
           <mat-form-field fxFlex="48%">
             <mat-label>Value Type</mat-label>
-            <mat-select>
+            <mat-select [(ngModel)] = "featureObject.valueType"  name="valueType">
               <mat-option *ngFor="let value of valueData" [value]="value">
                 {{ value }}
               </mat-option>
@@ -22,7 +22,7 @@
   
           <mat-form-field fxFlex="48%">
             <mat-label>Data Type</mat-label>
-            <mat-select>
+            <mat-select [(ngModel)] = "featureObject.dataType"  name="dataType">
               <mat-option *ngFor="let data of dataData" [value]="data">
                 {{ data }}
               </mat-option>
@@ -33,7 +33,7 @@
   
           <mat-form-field fxFlex="48%">
             <mat-label>Category</mat-label>
-            <mat-select>
+            <mat-select [(ngModel)] = "featureObject.category" name="category">
               <mat-option *ngFor="let category of categoryData" [value]="category">
                 {{ category }}
               </mat-option>
@@ -43,7 +43,7 @@
           <span fxFlex="48%" fxHide.lt-md></span>
           
           <div fxFlex="18%">
-            <mat-checkbox labelPosition="before">Status</mat-checkbox>
+            <mat-checkbox labelPosition="before" [(ngModel)] = "featureObject.status"  name="status">Status</mat-checkbox>
           </div>
 
         </div> 
@@ -52,7 +52,7 @@
           <!-- Here GET used for getting Feature Details Page -->
           <button mat-raised-button color="accent" [routerLink]="['/featuredetails']">Get</button>
           <button type="button" mat-raised-button [routerLink]="['../']">Cancel</button>
-          <button mat-raised-button color="primary">Submit</button>
+          <button mat-raised-button color="primary" (click)="submitFeature()">Submit</button>
         </mat-card-actions>
 
     </form>

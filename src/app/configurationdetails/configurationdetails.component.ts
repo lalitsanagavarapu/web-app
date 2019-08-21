@@ -12,11 +12,12 @@ import { Component, OnInit } from '@angular/core';
 export class ConfigurationdetailsComponent implements OnInit {
 
 
-  
+  public displayedColumns: string[] = ['Feature', 'ValueType', 'DataType', 'Category', 'Status'];
   
   constructor() { }
 
   ngOnInit() {
   }
 
+  
 }

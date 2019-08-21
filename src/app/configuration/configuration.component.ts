@@ -28,12 +28,32 @@ export class ConfigurationComponent implements OnInit {
   maxData = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
  
 
-  
+  public configurationObj = {
+    feature : '',
+    category: '',
+    product : '',
+    weightage : '',
+    colour1: '',
+    scoremin1: '',
+    scoremax1: '',
+
+    colour2: '',
+    scoremin2: '',
+    scoremax2: '',
+
+    colour3: '',
+    scoremin3: '',
+    scoremax3: '',
+  };
   
   constructor() { }
 
   ngOnInit() {
     
+  }
+
+  public submitFeature(){
+    console.log(JSON.stringify(this.configurationObj));
   }
 
 }

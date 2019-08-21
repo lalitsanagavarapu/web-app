@@ -5,7 +5,7 @@
               
                 <mat-form-field fxFlex="24%">
                     <mat-label>Feature</mat-label>
-                    <mat-select>
+                    <mat-select [(ngModel)] = "criteriaObject.feature" name="feature">
                       <mat-option *ngFor="let feature of featureData" [value]="feature">
                         {{ feature }}
                       </mat-option>
@@ -16,7 +16,7 @@
 
                 <mat-form-field fxFlex="24%">
                     <mat-label>Category</mat-label>
-                    <mat-select>
+                    <mat-select [(ngModel)] = "criteriaObject.category" name="category">
                       <mat-option *ngFor="let category of categoryData" [value]="category">
                         {{ category }}
                       </mat-option>
@@ -28,7 +28,7 @@
 
                 <mat-form-field fxFlex="24%">
                     <mat-label>Product</mat-label>
-                    <mat-select>
+                    <mat-select [(ngModel)] = "criteriaObject.product" name="product">
                       <mat-option *ngFor="let product of productData" [value]="product">
                         {{ product }}
                       </mat-option>
@@ -38,7 +38,7 @@
                 <span fxFlex="90%" fxHide.lt-md></span> 
 
                 <mat-label>Data Source</mat-label>
-                <mat-radio-group fxLayout="row" fxLayoutGap="20px">
+                <mat-radio-group fxLayout="row" fxLayoutGap="20px" [(ngModel)] = "criteriaObject.datasource" name="datasource">
                     <mat-radio-button value="XML">XML</mat-radio-button>
                     <mat-radio-button value="JSON">JSON</mat-radio-button>
                     <mat-radio-button value="SQL">SQL</mat-radio-button>
@@ -49,14 +49,14 @@
 
                 <mat-form-field fxFlex="48%">
                     <mat-label>SQL/API</mat-label>
-                    <input type="textarea" matInput>
+                    <input type="textarea" matInput [(ngModel)] = "criteriaObject.sqlapi" name="sqlapi">
                 </mat-form-field>
 
                 <span fxFlex="48%" fxHide.lt-md></span>
 
                 <mat-form-field fxFlex="48%">
                     <mat-label>Key</mat-label>
-                    <input type="number" matInput>
+                    <input type="number" matInput [(ngModel)] = "criteriaObject.key" name="key">
                 </mat-form-field>
 
                 <span fxFlex="48%" fxHide.lt-md></span>
@@ -88,7 +88,7 @@
             <mat-card-actions fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="5px">
                     <button mat-raised-button color="accent" [routerLink]="['/criteriadetails']">Get</button>
                     <button type="button" mat-raised-button [routerLink]="['../']">Cancel</button>
-                    <button mat-raised-button color="primary">Submit</button>
+                    <button mat-raised-button color="primary" (click)="submitFeature()">Submit</button>
                 </mat-card-actions>
 
         </form>

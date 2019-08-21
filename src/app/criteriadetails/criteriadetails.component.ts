@@ -12,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class CriteriadetailsComponent implements OnInit {
 
 
-  
+  public displayedColumns: string[] = ['Feature', 'ValueType', 'DataType', 'Category', 'Status'];
   
   constructor() { }
 

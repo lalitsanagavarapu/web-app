@@ -16,10 +16,24 @@ export class FeatureComponent implements OnInit {
   dataData = ['Numeric', 'Character', 'Date'];
 
   categoryData = ['Individual', 'Organisation', 'Country', 'CreditHistory', 'Loan'];
+
+  public featureObject = {
+    feature: '',
+    valueType: '',
+    dataType: '',
+    category: '',
+    status: ''
+  }
   
+  // public featureitems = [];
   constructor() { }
 
   ngOnInit() {
 
+  }
+
+  public submitFeature(){
+    console.log(JSON.stringify(this.featureObject));
+    localStorage.setItem('featureObj', JSON.stringify(this.featureObject));
   }
 }
