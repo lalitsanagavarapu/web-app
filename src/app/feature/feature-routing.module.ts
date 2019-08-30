@@ -11,7 +11,7 @@ import { extract } from '../core/i18n/i18n.service';
 /** Custom Components */
 import { FeatureComponent } from './feature.component';
 
-/** Feature Routes */
+/** Feature Screen Routes */
 const routes: Routes = [
   Route.withShell([
     {
@@ -23,7 +23,7 @@ const routes: Routes = [
 ];
 
 /**
- * Feature Module
+ * Feature Screen Module
  *
  */
 @NgModule({

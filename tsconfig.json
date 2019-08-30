@@ -8,9 +8,9 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
     "target": "es5",
+    "noImplicitAny": false,
     "typeRoots": [
       "node_modules/@types"
     ],

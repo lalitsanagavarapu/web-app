@@ -1,3 +1,4 @@
+<!-- Form for Feature Screen -->
 <div class="container">
     <mat-card>
         <form>
@@ -49,10 +50,9 @@
         </div> 
 
         <mat-card-actions fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="5px">
-          <!-- Here GET used for getting Feature Details Page -->
           <button mat-raised-button color="accent" [routerLink]="['/featuredetails']">Get</button>
           <button type="button" mat-raised-button [routerLink]="['../']">Cancel</button>
-          <button mat-raised-button color="primary" (click)="submitFeature()">Submit</button>
+          <button mat-raised-button color="primary" [routerLink]="['/featuredetails']" (click)="submitFeature()">Submit</button>
         </mat-card-actions>
 
     </form>

@@ -7,11 +7,12 @@ import { FeatureRoutingModule } from './feature-routing.module';
 
 /** Custom Components */
 import { FeatureComponent } from './feature.component';
+import { FeatureService} from './feature.service';
 
 /**
- * Feature Module
+ * Feature Screen Module
  *
- * Feature components should be declared here.
+ * Feature Screen components should be declared here.
  */
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { FeatureComponent } from './feature.component';
   ],
   declarations: [
     FeatureComponent,
-  ]
+  ],
+  providers: [FeatureService]
 })
 export class FeatureModule { }

@@ -7,6 +7,7 @@ import { CriteriaRoutingModule } from './criteria-routing.module';
 
 /** Custom Components */
 import { CriteriaComponent } from './criteria.component';
+import { CriteriaService } from './criteria.service';
 
 /**
  * Criteria Module
@@ -20,6 +21,7 @@ import { CriteriaComponent } from './criteria.component';
   ],
   declarations: [
     CriteriaComponent
-  ]
+  ],
+  providers : [CriteriaService]
 })
 export class CriteriaModule { }

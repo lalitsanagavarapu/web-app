@@ -1,5 +1,7 @@
 /** Angular Imports */
 import { Component, OnInit } from '@angular/core';
+import { ConfigService } from './configuration.service';
+import { Router } from '@angular/router';
 
 /**
  * Configuration component.
@@ -34,19 +36,19 @@ export class ConfigurationComponent implements OnInit {
     product : '',
     weightage : '',
     colour1: '',
-    scoremin1: '',
-    scoremax1: '',
+    greenmin: '',
+    greenmax: '',
 
     colour2: '',
-    scoremin2: '',
-    scoremax2: '',
+    ambermin: '',
+    ambermax: '',
 
     colour3: '',
-    scoremin3: '',
-    scoremax3: '',
+    redmin: '',
+    redmax: '',
   };
   
-  constructor() { }
+  constructor(private _configService: ConfigService, private router: Router) { }
 
   ngOnInit() {
     
@@ -54,6 +56,10 @@ export class ConfigurationComponent implements OnInit {
 
   public submitFeature(){
     console.log(JSON.stringify(this.configurationObj));
+    const successcallback = (data) => {
+      this.router.navigate(['configurationdetails'])
+    }
+    this._configService.saveConfig(this.configurationObj, successcallback);
   }
 
 }

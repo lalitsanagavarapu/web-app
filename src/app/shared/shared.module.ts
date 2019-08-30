@@ -13,6 +13,7 @@ import { ThemePickerComponent } from './theme-picker/theme-picker.component';
 /** Custom Modules */
 import { IconsModule } from './icons.module';
 import { MaterialModule } from './material.module';
+import { HttpRequest } from '@angular/common/http';
 
 /**
  * Shared Module
@@ -31,7 +32,7 @@ import { MaterialModule } from './material.module';
     FileUploadComponent,
     FooterComponent,
     LanguageSelectorComponent,
-    ThemePickerComponent
+    ThemePickerComponent,
   ],
   exports: [
     FileUploadComponent,
@@ -42,7 +43,7 @@ import { MaterialModule } from './material.module';
     IconsModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   entryComponents: [
     DeleteDialogComponent

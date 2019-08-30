@@ -1,6 +1,7 @@
 /** Angular Imports */
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
+import { FeatureDetailsService } from './featuredetails.service';
 
 
 
@@ -12,15 +13,17 @@ import {MatTableDataSource} from '@angular/material/table';
 export class FeaturedetailsComponent implements OnInit {
 
   displayedColumns: string[] = ['Feature', 'ValueType', 'DataType', 'Category', 'Status']
-  // public dataSource = [];
-  constructor() { }
+  public dataSource = [];
+  constructor(private _featureService: FeatureDetailsService) { }
 
   ngOnInit() {
-    console.log(localStorage.getItem('featureObj'));
-    // let x = {
-    //   "feature":"jai","valueType":"Interval","dataType":"Character","category":"Loan","status":true
-    // }
-    // this.dataSource.push(x);
+
+
+    const allFeatures = (data) => {
+      console.log(JSON.stringify(data));
+      this.dataSource = data;
+    }
+    this._featureService.getAllFeatures(allFeatures);
   }
 
 }

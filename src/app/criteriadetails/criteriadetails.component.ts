@@ -1,5 +1,6 @@
 /** Angular Imports */
 import { Component, OnInit } from '@angular/core';
+import { CriteriaDetailsService } from './criteriadetails.service';
 
 /**
  * Criteria component. 
@@ -11,12 +12,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CriteriadetailsComponent implements OnInit {
 
-
-  public displayedColumns: string[] = ['Feature', 'ValueType', 'DataType', 'Category', 'Status'];
+  public dataSource = [];
+  public displayedColumns: string[] = ['Feature', 
+  'Category', 'Product', 'DataSource', 'SqlApi', 'Key'];
   
-  constructor() { }
+  constructor(private _criteriaService: CriteriaDetailsService) { }
 
   ngOnInit() {
+    const allCriterias = (data) => {
+      console.log(JSON.stringify(data));
+      this.dataSource = data;
+    }
+    this._criteriaService.getAllCriterias(allCriterias);
   }
 
 }

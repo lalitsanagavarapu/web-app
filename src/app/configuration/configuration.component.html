@@ -62,7 +62,7 @@
 
           <mat-form-field fxFlex="20%">
             <mat-label>Score Range(min.)</mat-label>
-            <mat-select [(ngModel)] = "configurationObj.scoremin1" name="scoremin1">
+            <mat-select [(ngModel)] = "configurationObj.greenmin" name="greenmin">
               <mat-option *ngFor="let min of minData" [value]="min">
                   {{ min }}
               </mat-option>
@@ -71,7 +71,7 @@
 
           <mat-form-field fxFlex="20%">
             <mat-label>Score Range(max.)</mat-label>
-            <mat-select [(ngModel)] = "configurationObj.scoremax1" name="scoremax1">
+            <mat-select [(ngModel)] = "configurationObj.greenmax" name="greenmax">
               <mat-option *ngFor="let max of maxData" [value]="max">
                   {{ max }}
               </mat-option>
@@ -91,7 +91,7 @@
 
           <mat-form-field fxFlex="20%">
             <mat-label>Score Range(min.)</mat-label>
-            <mat-select [(ngModel)] = "configurationObj.scoremin2" name="scoremin2">
+            <mat-select [(ngModel)] = "configurationObj.ambermin" name="ambermin">
               <mat-option *ngFor="let min of minData" [value]="min">
                   {{ min }}
               </mat-option>
@@ -100,7 +100,7 @@
 
           <mat-form-field fxFlex="20%">
             <mat-label>Score Range(max.)</mat-label>
-            <mat-select [(ngModel)] = "configurationObj.scoremax2" name="scoremax2">
+            <mat-select [(ngModel)] = "configurationObj.ambermax" name="ambermax">
               <mat-option *ngFor="let max of maxData" [value]="max">
                   {{ max }}
               </mat-option>
@@ -120,7 +120,7 @@
 
           <mat-form-field fxFlex="20%">
             <mat-label>Score Range(min.)</mat-label>
-            <mat-select [(ngModel)] = "configurationObj.scoremin3" name="scoremin3">
+            <mat-select [(ngModel)] = "configurationObj.redmin" name="redmin">
               <mat-option *ngFor="let min of minData" [value]="min">
                   {{ min }}
               </mat-option>
@@ -129,7 +129,7 @@
 
           <mat-form-field fxFlex="20%">
             <mat-label>Score Range(max.)</mat-label>
-            <mat-select [(ngModel)] = "configurationObj.scoremax3" name="scoremax3">
+            <mat-select [(ngModel)] = "configurationObj.redmax" name="redmax">
               <mat-option *ngFor="let max of maxData" [value]="max">
                   {{ max }}
               </mat-option>

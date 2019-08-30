@@ -7,6 +7,7 @@ import { FeaturedetailsRoutingModule } from './featuredetails-routing.module';
 
 /** Custom Components */
 import { FeaturedetailsComponent } from './featuredetails.component';
+import { FeatureDetailsService } from './featuredetails.service';
 
 /**
  * Feature Details Module
@@ -21,5 +22,6 @@ import { FeaturedetailsComponent } from './featuredetails.component';
   declarations: [
     FeaturedetailsComponent
   ],
+  providers: [FeatureDetailsService]
 })
 export class FeaturedetailsModule { }

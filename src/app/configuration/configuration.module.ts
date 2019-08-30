@@ -7,6 +7,7 @@ import { ConfigurationRoutingModule } from './configuration-routing.module';
 
 /** Custom Components */
 import { ConfigurationComponent } from './configuration.component';
+import { ConfigService } from './configuration.service';
 
 /**
  * Configuration Module
@@ -20,6 +21,7 @@ import { ConfigurationComponent } from './configuration.component';
   ],
   declarations: [
     ConfigurationComponent
-  ]
+  ],
+  providers: [ConfigService]
 })
 export class ConfigurationModule { }

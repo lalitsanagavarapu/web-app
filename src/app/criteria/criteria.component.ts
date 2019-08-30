@@ -1,5 +1,7 @@
 /** Angular Imports */
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CriteriaService } from './criteria.service';
 
 /**
  * Create Criteria Component
@@ -42,17 +44,21 @@ export class CriteriaComponent implements OnInit {
     category: '',
     product: '',
     datasource: '',
-    key: '',
+    keyvalue: '',
     sqlapi : ''
   };
-  constructor() { }
+  constructor(private _criteriaService: CriteriaService, private router: Router) { }
 
   ngOnInit() {
 
   }
 
-  public submitFeature(){
+  public submitCriteria(){
     console.log(JSON.stringify(this.criteriaObject));
+    const successcallback = (data) => {
+      this.router.navigate(['criteriadetails'])
+    }
+    this._criteriaService.saveCriteria(this.criteriaObject, successcallback);
   }
 }
 

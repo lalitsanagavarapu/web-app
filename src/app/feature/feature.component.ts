@@ -1,8 +1,10 @@
 /** Angular Imports */
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FeatureService } from './feature.service';
 
 /**
- * Create Feature Component
+ * Create Feature Screen Component
  */
 @Component({
   selector: 'mifosx-feature',
@@ -25,15 +27,16 @@ export class FeatureComponent implements OnInit {
     status: ''
   }
   
-  // public featureitems = [];
-  constructor() { }
-
+  constructor(private _featureService: FeatureService,private router: Router) { }
   ngOnInit() {
 
   }
 
   public submitFeature(){
-    console.log(JSON.stringify(this.featureObject));
-    localStorage.setItem('featureObj', JSON.stringify(this.featureObject));
+    const successcallback = (data) => {
+      this.router.navigate(['featuredetails']);
+
+    }
+    this._featureService.saveFeature(this.featureObject, successcallback);
   }
 }

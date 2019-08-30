@@ -7,6 +7,7 @@ import { ConfigurationdetailsRoutingModule } from './configurationdetails-routin
 
 /** Custom Components */
 import { ConfigurationdetailsComponent } from './configurationdetails.component';
+import { ConfigDetailsService } from './configurationdetails.service.component';
 
 /**
  * Configuration Module
@@ -20,6 +21,7 @@ import { ConfigurationdetailsComponent } from './configurationdetails.component'
   ],
   declarations: [
     ConfigurationdetailsComponent
-  ]
+  ],
+  providers: [ConfigDetailsService]
 })
 export class ConfigurationdetailsModule { }

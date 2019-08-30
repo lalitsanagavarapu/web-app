@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpRequest } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 /** Tanslation Imports */
@@ -44,6 +44,7 @@ import { ScorecardModule } from './scorecard/scorecard.module';
 
 /** Main Routing Module */
 import { AppRoutingModule } from './app-routing.module';
+import { HttpRequestService } from './shared/HttpRequestService';
 
 /**
  * App Module
@@ -80,7 +81,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule
   ],
   declarations: [WebAppComponent, NotFoundComponent],
-  providers: [],
+  providers: [HttpRequestService],
   bootstrap: [WebAppComponent]
 })
 export class AppModule { }
