@@ -18,6 +18,7 @@ const SERVICE_URLS_MAP = {
     saveConfig : 'config/saveConfig?tenantIdentifier=default',
     getAllCriterias: 'criteria/getAllCriterias?tenantIdentifier=default',
     saveCriteria : 'criteria/saveCriteria?tenantIdentifier=default',
+    getOneFeature: 'feature/getByFeatureId?tenantIdentifier=default',
 
 };
 

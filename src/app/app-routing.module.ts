@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Not Found Component
 import {NotFoundComponent} from './not-found/not-found.component';
+import { FeatureComponent } from './feature/feature.component';
 
 /**
  * Fallback to this route when no prior route is matched.

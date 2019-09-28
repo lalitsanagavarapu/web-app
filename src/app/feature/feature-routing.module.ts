@@ -18,6 +18,10 @@ const routes: Routes = [
       path: 'feature',
       component: FeatureComponent,
       data: { title: extract('Feature'), breadcrumb: 'Feature' }
+    },
+    {
+      path: 'feature/:id',
+      component: FeatureComponent
     }
   ])
 ];

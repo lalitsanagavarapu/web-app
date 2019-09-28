@@ -10,6 +10,7 @@ export class FeatureService {
     public saveFeature(featureObj, successcallback) {
         let responseObject: any;
         const request = {
+            id: featureObj.id,
             feature: featureObj.feature,
             valueType: featureObj.valueType,
             dataType: featureObj.dataType,
@@ -28,4 +29,24 @@ export class FeatureService {
                 }
             );
     }
+
+    public getOneFeature(featureId, successcallback) {
+        let responseObject: any;
+        const request = {
+            id : featureId
+        }
+        console.log(JSON.stringify(request));
+        this._httpService.postRequest(Config.getEnvironmentVariable('getOneFeature'), request)
+            .subscribe(
+                (data) => {
+                    responseObject = data;
+                    successcallback(responseObject);
+                },
+                (error) => console.log('err'),
+                () => {
+                    console.log('success ');
+                }
+            );
+    }
+
 }

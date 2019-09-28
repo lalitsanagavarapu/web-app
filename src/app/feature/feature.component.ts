@@ -1,6 +1,6 @@
 /** Angular Imports */
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FeatureService } from './feature.service';
 
 /**
@@ -20,6 +20,7 @@ export class FeatureComponent implements OnInit {
   categoryData = ['Individual', 'Organisation', 'Country', 'CreditHistory', 'Loan'];
 
   public featureObject = {
+    id: null,
     feature: '',
     valueType: '',
     dataType: '',
@@ -27,9 +28,18 @@ export class FeatureComponent implements OnInit {
     status: ''
   }
   
-  constructor(private _featureService: FeatureService,private router: Router) { }
+  constructor(private _featureService: FeatureService,private router: Router, private route: ActivatedRoute) { }
   ngOnInit() {
+    let id = null;
+    this.route.params.subscribe (
+      params => {
+        id = params['id'];
+      }
+    );
+    if(id){
+      this.getById(id);
 
+    }
   }
 
   public submitFeature(){
@@ -38,5 +48,18 @@ export class FeatureComponent implements OnInit {
 
     }
     this._featureService.saveFeature(this.featureObject, successcallback);
+  }
+
+  public getById(id){
+    const successcallback = (data) => {
+    //  console.log(JSON.stringify(data));
+     this.featureObject.category = data['category'];
+     this.featureObject.dataType = data['dataType'];
+     this.featureObject.feature = data['feature'];
+     this.featureObject.valueType = data['valueType'];
+     this.featureObject.id = data['id'];
+     this.featureObject.status = data['status'];
+    }
+    this._featureService.getOneFeature( id, successcallback);
   }
 }
