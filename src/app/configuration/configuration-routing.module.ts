@@ -18,6 +18,10 @@ const routes: Routes = [
       path: 'configuration',
       component: ConfigurationComponent,
       data: { title: extract('Configuration'), breadcrumb: 'Configuration' }
+    },
+    {
+      path: 'configuration/:id',
+      component: ConfigurationComponent
     }
   ])
 ];

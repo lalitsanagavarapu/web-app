@@ -35,7 +35,7 @@ export class FeatureService {
         const request = {
             id : featureId
         }
-        console.log(JSON.stringify(request));
+        // console.log(JSON.stringify(request));
         this._httpService.postRequest(Config.getEnvironmentVariable('getOneFeature'), request)
             .subscribe(
                 (data) => {

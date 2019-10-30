@@ -40,4 +40,23 @@ export class ConfigService {
                 }
             );
     }
+
+    public getOneFeature(configId, successcallback) {
+        let responseObject: any;
+        const request = {
+            id : configId
+        }
+        console.log(JSON.stringify(request));
+        this._httpService.postRequest(Config.getEnvironmentVariable('getOneConfig'), request)
+            .subscribe(
+                (data) => {
+                    responseObject = data;
+                    successcallback(responseObject);
+                },
+                (error) => console.log('err'),
+                () => {
+                    console.log('success ');
+                }
+            );
+    }
 }
