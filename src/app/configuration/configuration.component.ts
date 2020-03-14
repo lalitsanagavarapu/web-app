@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConfigService } from './configuration.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
+
 /**
  * Configuration component.
  */
