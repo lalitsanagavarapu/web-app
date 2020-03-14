@@ -4,8 +4,9 @@ import { ConfigService } from './configuration.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 /**
- * Configuration component.
+ * Configuration component. (Connection details)
  */
+
 @Component({
   selector: 'mifosx-configuration',
   templateUrl: './configuration.component.html',
