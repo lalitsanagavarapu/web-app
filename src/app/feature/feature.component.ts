@@ -26,8 +26,8 @@ export class FeatureComponent implements OnInit {
     dataType: '',
     category: '',
     status: ''
-  }
-  
+  };
+
   constructor(private _featureService: FeatureService,private router: Router, private route: ActivatedRoute) { }
   ngOnInit() {
     let id = null;
@@ -45,20 +45,21 @@ export class FeatureComponent implements OnInit {
   public submitFeature(){
     const successcallback = (data) => {
       this.router.navigate(['featuredetails']);
-
     }
     this._featureService.saveFeature(this.featureObject, successcallback);
   }
 
   public getById(id){
     const successcallback = (data) => {
-    //  console.log(JSON.stringify(data));
      this.featureObject.category = data['category'];
-     this.featureObject.dataType = data['dataType'];
+     this.featureObject.dataType = data['data'];
      this.featureObject.feature = data['feature'];
-     this.featureObject.valueType = data['valueType'];
+     this.featureObject.valueType = data['value'];
      this.featureObject.id = data['id'];
      this.featureObject.status = data['status'];
+
+    //  console.log(JSON.stringify(this.featureObject));
+
     }
     this._featureService.getOneFeature( id, successcallback);
   }

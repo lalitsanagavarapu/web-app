@@ -22,7 +22,12 @@ export class ConfigurationdetailsComponent implements OnInit {
   ngOnInit() {
 
     const allConfigs = (data) => {
-      this.dataSource = data;
+      let res = []
+      for (let x of data){
+        res.push(JSON.parse(x));
+      }
+
+      this.dataSource = res;
     }
     this._configDetails.getAllConfigs(allConfigs);
   }

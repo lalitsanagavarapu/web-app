@@ -12,8 +12,8 @@ export class FeatureService {
         const request = {
             id: featureObj.id,
             feature: featureObj.feature,
-            valueType: featureObj.valueType,
-            dataType: featureObj.dataType,
+            value: featureObj.valueType,
+            data: featureObj.dataType,
             category: featureObj.category,
             status : featureObj.status
         }

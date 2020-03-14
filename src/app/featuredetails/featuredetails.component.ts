@@ -21,7 +21,12 @@ export class FeaturedetailsComponent implements OnInit {
     this.dataSource = [];
     const allFeatures = (data) => {
       // console.log(JSON.stringify(data));
-      this.dataSource = data;
+      let res = []
+      for (let x of data){
+        res.push(JSON.parse(x));
+      }
+
+      this.dataSource = res;
     }
     this._featureService.getAllFeatures(allFeatures);
   }

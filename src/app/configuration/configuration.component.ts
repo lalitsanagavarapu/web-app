@@ -28,7 +28,7 @@ export class ConfigurationComponent implements OnInit {
   minData = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 
   maxData = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
- 
+
 
   public configurationObj = {
     feature : '',
@@ -46,8 +46,9 @@ export class ConfigurationComponent implements OnInit {
     colour3: 'Red',
     redmin: '',
     redmax: '',
+    id: ''
   };
-  
+
   constructor(private _configService: ConfigService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -59,6 +60,7 @@ export class ConfigurationComponent implements OnInit {
     );
     if(id){
       this.getById(id);
+      this.configurationObj.id = id;
 
     }
   }

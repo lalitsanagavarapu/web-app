@@ -1,9 +1,10 @@
 /** Angular Imports */
 import { Component, OnInit } from '@angular/core';
 import { CriteriaDetailsService } from './criteriadetails.service';
+import { Router } from '@angular/router';
 
 /**
- * Criteria component. 
+ * Criteria component.
  */
 @Component({
   selector: 'mifosx-criteriadetails',
@@ -13,17 +14,25 @@ import { CriteriaDetailsService } from './criteriadetails.service';
 export class CriteriadetailsComponent implements OnInit {
 
   public dataSource = [];
-  public displayedColumns: string[] = ['Feature', 
+  public displayedColumns: string[] = ['Feature',
   'Category', 'Product', 'DataSource', 'SqlApi', 'Key'];
-  
-  constructor(private _criteriaService: CriteriaDetailsService) { }
+
+  constructor(private _criteriaService: CriteriaDetailsService,private router: Router) { }
 
   ngOnInit() {
     const allCriterias = (data) => {
-      console.log(JSON.stringify(data));
-      this.dataSource = data;
-    }
+      let res = []
+      for (let x of data){
+        res.push(JSON.parse(x));
+      }
+
+      this.dataSource = res;
+    };
     this._criteriaService.getAllCriterias(allCriterias);
+  }
+
+  public getRecord(row){
+    this.router.navigate(['configuration/'+row.id]);
   }
 
 }

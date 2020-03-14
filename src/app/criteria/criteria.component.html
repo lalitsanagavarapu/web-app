@@ -2,7 +2,7 @@
     <mat-card>
         <form>
             <div fxLayout="row wrap" fxLayoutGap="2%" fxLayout.lt-md="column">
-              
+
                 <mat-form-field fxFlex="24%">
                     <mat-label>Feature</mat-label>
                     <mat-select [(ngModel)] = "criteriaObject.feature" name="feature">
@@ -22,7 +22,7 @@
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
-                
+
 
                 <span fxFlex="4%" fxHide.lt-md></span>
 
@@ -35,7 +35,7 @@
                     </mat-select>
                   </mat-form-field>
 
-                <span fxFlex="90%" fxHide.lt-md></span> 
+                <span fxFlex="90%" fxHide.lt-md></span>
 
                 <mat-label>Data Source</mat-label>
                 <mat-radio-group fxLayout="row" fxLayoutGap="20px" [(ngModel)] = "criteriaObject.datasource" name="datasource">
@@ -54,10 +54,10 @@
 
                 <span fxFlex="48%" fxHide.lt-md></span>
 
-                <mat-form-field fxFlex="48%">
+                <!-- <mat-form-field fxFlex="48%">
                     <mat-label>Key</mat-label>
                     <input type="number" matInput [(ngModel)] = "criteriaObject.key" name="key">
-                </mat-form-field>
+                </mat-form-field> -->
 
                 <span fxFlex="48%" fxHide.lt-md></span>
 
@@ -82,7 +82,7 @@
                 <button mat-raised-button (click)="addRow()"> Add Row </button>
                 <button mat-raised-button (click)="removeRow()"> Remove Row </button>
 
-               
+
 
             </div>
             <mat-card-actions fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="5px">

@@ -18,15 +18,16 @@ export class ConfigService {
             // colour1: criteriaObj.feature,
             greenmin: criteriaObj.greenmin,
             greenmax: criteriaObj.greenmax,
-        
+
             // colour2: criteriaObj.feature,
             ambermin: criteriaObj.ambermin,
             ambermax: criteriaObj.ambermax,
-        
+
             // colour3: criteriaObj.feature,
             redmin: criteriaObj.redmin,
             redmax: criteriaObj.redmax,
-           
+            id: criteriaObj.id
+
         }
         this._httpService.postRequest(Config.getEnvironmentVariable('saveConfig'), request)
             .subscribe(

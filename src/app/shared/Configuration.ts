@@ -8,17 +8,17 @@ export const ENV_PATH: any = {
     // DEV_URL: 'http://localhost:3000',
     SIT_URL: '',
     UAT_URL: '',
-    DEV_URL: ' https://localhost:8443/fineract-provider/api/v1/',
+    DEV_URL: ' http://127.0.0.1:5000/',
 };
 // https://localhost:8443/fineract-provider/api/v1/helloworld?tenantIdentifier=default&Authorization=bWlmb3M6cGFzc3dvcmQ=
 const SERVICE_URLS_MAP = {
-    getAllFeatures : 'feature/getAllFeatures?tenantIdentifier=default&Authorization=bWlmb3M6cGFzc3dvcmQ=',
+    getAllFeatures : 'feature/getAllFeatures',
     saveFeature : 'feature/saveFeature?tenantIdentifier=default',
-    getAllConfigs: 'config/getAllConfig?tenantIdentifier=default',
-    saveConfig : 'config/saveConfig?tenantIdentifier=default',
-    getAllCriterias: 'criteria/getAllCriterias?tenantIdentifier=default',
-    saveCriteria : 'criteria/saveCriteria?tenantIdentifier=default',
-    getOneFeature: 'feature/getByFeatureId?tenantIdentifier=default',
+    getAllConfigs: '/config/getAllConfig',
+    saveConfig : 'config/saveConfig',
+    getAllCriterias: 'criteria/getAllCriterias',
+    saveCriteria : 'criteria/saveCriteria',
+    getOneFeature: 'feature/getByFeatureId',
     getOneConfig: 'config/getByConfigId?tenantIdentifier=default',
 
 };
