@@ -14,7 +14,7 @@ export const ENV_PATH: any = {
 const SERVICE_URLS_MAP = {
     getAllFeatures : 'feature/getAllFeatures',
     saveFeature : 'feature/saveFeature?tenantIdentifier=default',
-    getAllConfigs: '/config/getAllConfig',
+    getAllConfigs: 'config/getAllConfig',
     saveConfig : 'config/saveConfig',
     getAllCriterias: 'criteria/getAllCriterias',
     saveCriteria : 'criteria/saveCriteria',

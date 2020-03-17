@@ -60,6 +60,20 @@ export class CriteriaComponent implements OnInit {
     }
     this._criteriaService.saveCriteria(this.criteriaObject, successcallback);
   }
+
+  public getById(id)
+  {
+    const successcallback = (data) => {
+      this.criteriaObject.category = data['category']; 
+      this.criteriaObject.datasource = data['datasource']; 
+      this.criteriaObject.feature = data['feature']; 
+      this.criteriaObject.keyvalue = data['keyvalue']; 
+      this.criteriaObject.product = data['product']; 
+      this.criteriaObject.sqlapi = data['sqlapi'];
+    }
+    this._criteriaService.getOneCriteria( id, successcallback);
+  }
+
 }
 
 export interface PeriodicElement {

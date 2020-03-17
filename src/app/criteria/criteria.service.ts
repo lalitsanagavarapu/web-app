@@ -30,4 +30,22 @@ export class CriteriaService {
                 }
             );
     }
+
+    public getOneCriteria(criteriaId, successcallback) {
+        let responseObject: any; 
+        const request = {
+            id : criteriaId
+        }
+        this._httpService.postRequest(Config.getEnvironmentVariable('getOneCriteria'), request)
+            .subscribe(
+                (data) => {
+                    responseObject = data; 
+                    successcallback(responseObject);
+                },
+                (error) => console.log('err'),
+                () => {
+                    console.log('success');
+                }
+            );
+    }
 }
