@@ -1,8 +1,17 @@
 table {
-    width: 50%; 
+    width: 50%;
 }
 
 
 button {
     margin: 16px 8px;
+}
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.col-sm-4{
+  width: 33.33333333%;
+  display: contents;
 }

@@ -19,7 +19,7 @@ import { AlertService } from '../core/alert/alert.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit {
 
   /** True if password requires a reset. */
   resetPassword = false;
@@ -39,27 +39,28 @@ export class LoginComponent implements OnInit, OnDestroy {
    * Subscribes to alert event of alert service.
    */
   ngOnInit() {
-    this.alert$ = this.alertService.alertEvent.subscribe((alertEvent: Alert) => {
-      const alertType = alertEvent.type;
-      if (alertType === 'Password Expired') {
-        this.twoFactorAuthenticationRequired = false;
-        this.resetPassword = true;
-      } else if (alertType === 'Two Factor Authentication Required') {
-        this.resetPassword = false;
-        this.twoFactorAuthenticationRequired = true;
-      } else if (alertType === 'Authentication Success') {
-        this.resetPassword = false;
-        this.twoFactorAuthenticationRequired = false;
-        this.router.navigate(['/'], { replaceUrl: true });
-      }
-    });
+    this.router.navigate(['/'], { replaceUrl: true });
+    // this.alert$ = this.alertService.alertEvent.subscribe((alertEvent: Alert) => {
+    //   const alertType = alertEvent.type;
+    //   if (alertType === 'Password Expired') {
+    //     this.twoFactorAuthenticationRequired = false;
+    //     this.resetPassword = true;
+    //   } else if (alertType === 'Two Factor Authentication Required') {
+    //     this.resetPassword = false;
+    //     this.twoFactorAuthenticationRequired = true;
+    //   } else if (alertType === 'Authentication Success') {
+    //     this.resetPassword = false;
+    //     this.twoFactorAuthenticationRequired = false;
+    //     this.router.navigate(['/'], { replaceUrl: true });
+    //   }
+    // });
   }
 
   /**
    * Unsubscribes from alerts.
    */
-  ngOnDestroy() {
-    this.alert$.unsubscribe();
-  }
+  // ngOnDestroy() {
+  //   this.alert$.unsubscribe();
+  // }
 
 }

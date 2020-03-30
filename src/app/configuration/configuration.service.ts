@@ -8,6 +8,20 @@ export class ConfigService {
 
     constructor(private _httpService: HttpRequestService, private _router: Router) { }
 
+    public getCategoryFeature(successcallback){
+      let responseObject :any;
+      this._httpService.getRequest(Config.getEnvironmentVariable('getFeatureCatgory'))
+            .subscribe(
+                (data) => {
+                    responseObject = data;
+                    successcallback(responseObject);
+                },
+                (error) => console.log('err'),
+                () => {
+                    console.log('success ');
+                }
+            );
+    }
     public saveConfig(criteriaObj, successcallback) {
         let responseObject: any;
         const request = {

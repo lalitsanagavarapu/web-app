@@ -32,7 +32,7 @@ export class CriteriadetailsComponent implements OnInit {
   }
 
   public getRecord(row){
-    this.router.navigate(['configuration/'+row.id]);
+    this.router.navigate(['criteria/'+row.id]);
   }
 
 }

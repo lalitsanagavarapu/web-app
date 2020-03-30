@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CriteriaService } from './criteria.service';
+import { MatTableDataSource } from '@angular/material';
 
 /**
  * Create Criteria Component
@@ -17,27 +18,19 @@ export class CriteriaComponent implements OnInit {
 
   productData = ['Agriculture', 'Personal', 'Capital', 'Ratio'];
 
-  categoryData = ['Individual', 'Organisation', 'Country', 'CreditHistory', 'Loan'];
 
-  featureData = ['Age', 'Income', 'Gender'];
+  featureData = [];
 
-  displayedColumns: string[] = ['Criteria', 'Score'];
+  displayedColumns: string[] = ['criteria', 'score'];
+  dataTable: MatTableDataSource<CriteriaScoreElement>;
+  // columnsToDisplay: string[] = this.displayedColumns.slice();
 
-  columnsToDisplay: string[] = this.displayedColumns.slice();
-
-  data: PeriodicElement[] = ELEMENT_DATA;
-
-  addRow() {
-    const randomColumn = Math.floor(Math.random() *
-    this.displayedColumns.length);
-    this.columnsToDisplay.push(this.displayedColumns[randomColumn]);
-  }
-
-  removeRow() {
-    if(this.columnsToDisplay.length) {
-      this.columnsToDisplay.pop();
-    }
-  }
+  // ELEMENT_DATA: PeriodicElement[] = [
+  //   {Score: 'cell1', Criteria: 'cell2'},
+  //   {Score: 'cell2', Criteria: 'cell3'},
+  //   {Score: 'cell1', Criteria: 'cell2'}
+  // ];
+  // data: PeriodicElement[] = this.ELEMENT_DATA;
 
   public criteriaObject = {
     feature: '',
@@ -45,12 +38,72 @@ export class CriteriaComponent implements OnInit {
     product: '',
     datasource: '',
     keyvalue: '',
-    sqlapi : ''
+    sqlapi : '',
+    scoreCriteria: []
   };
-  constructor(private _criteriaService: CriteriaService, private router: Router) { }
+  constructor(private _criteriaService: CriteriaService, private router: Router) {
+//     const tabledata: CriteriaScoreElement[] = [];
+//     let testData: CriteriaScoreElement ={
+//       criteria: 'Age',
+//       score: '0'
+//     };
+// tabledata.push(testData);
+//     this.dataTable = new MatTableDataSource(tabledata);
+    this.criteriaObject.scoreCriteria.push({
+      criteria: 'Age',
+      score: '0',
+      id: null
+    });
+    // this.dataTable.data.push({score: 'cell1', criteria: 'cell2'});
+  }
 
   ngOnInit() {
+    this.getFeatureCategory();
+  }
+  addRow() {
+    console.log(JSON.stringify(this.criteriaObject.scoreCriteria));
+    this.criteriaObject.scoreCriteria.push(
+      {score: 'cell1', criteria: 'cell2', id: null}
+    );
+    console.log(JSON.stringify(this.criteriaObject.scoreCriteria));
+    // this.dataTable.data.push({score: 'cell1', criteria: 'cell2'});
+    // this.dataTable.filter="";
+    // console.log(JSON.stringify(this.dataTable));
+  }
 
+  removeRow() {
+    if(this.dataTable.data.length){
+      this.dataTable.data.pop();
+    }
+    this.dataTable.filter="";
+  }
+
+
+  public getFeatureCategory() {
+    const successcallback = data => {
+      // this.featureData = data;
+      for(let feat of data){
+        // console.log(feat);
+        // console.log(JSON.parse(feat));
+        let single ={
+          id: JSON.parse(feat)['id'],
+          feature: JSON.parse(feat)['feature'],
+          category: JSON.parse(feat)['category']
+        };
+        console.log(single);
+        this.featureData.push(single);
+      }
+      // console.log(data);
+      // console.log(JSON.stringify(data));
+    };
+    this._criteriaService.getCategoryFeature(successcallback);
+  }
+
+  public onFeatureSelection(){
+    let y =this.featureData.filter((feat) =>  feat.feature === this.criteriaObject.feature);
+    // this.featureData.forEach(x-> x.feature===this.criteriaObject.feature)
+    this.criteriaObject.category = y[0].category;
+    console.log(y);
   }
 
   public submitCriteria(){
@@ -60,31 +113,14 @@ export class CriteriaComponent implements OnInit {
     }
     this._criteriaService.saveCriteria(this.criteriaObject, successcallback);
   }
+}
 
-  public getById(id)
-  {
-    const successcallback = (data) => {
-      this.criteriaObject.category = data['category']; 
-      this.criteriaObject.datasource = data['datasource']; 
-      this.criteriaObject.feature = data['feature']; 
-      this.criteriaObject.keyvalue = data['keyvalue']; 
-      this.criteriaObject.product = data['product']; 
-      this.criteriaObject.sqlapi = data['sqlapi'];
-    }
-    this._criteriaService.getOneCriteria( id, successcallback);
-  }
+export interface CriteriaScoreElement {
+  criteria: string;
+  score: string;
 
 }
 
-export interface PeriodicElement {
-  Criteria: string;
-  Score: string;
-  
-}
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {Score: 'cell1', Criteria: 'cell2'},
-  {Score: 'cell2', Criteria: 'cell3'},
-];
 
 
