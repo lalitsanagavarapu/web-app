@@ -49,8 +49,7 @@ export class FeatureComponent implements OnInit {
     this._featureService.saveFeature(this.featureObject, successcallback);
   }
 
-  public getById(id)
-  {
+  public getById(id){
     const successcallback = (data) => {
      this.featureObject.category = data['category'];
      this.featureObject.dataType = data['data'];

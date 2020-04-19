@@ -10,8 +10,21 @@ button {
   overflow: auto;
   max-height: 500px;
 }
+.rowstyle{
+  display: inline;
+}
 
-.col-sm-4{
-  width: 33.33333333%;
-  display: contents;
+.columnssm4{
+  width: 16%;
+  font-size: medium;
+  font-weight: 800;  // display: contents;
+}
+
+.error-width{
+  width: 20%;
+  margin-right: 87px;
+}
+
+.error-msg{
+  width: 16%;
 }

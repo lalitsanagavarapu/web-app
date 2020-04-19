@@ -7,6 +7,7 @@ import { ScorecardRoutingModule } from './scorecard-routing.module';
 
 /** Custom Components */
 import { ScorecardComponent } from './scorecard.component';
+import { ScoreCardService } from './scorecard.service';
 
 /**
  * Scorecard Module
@@ -20,6 +21,7 @@ import { ScorecardComponent } from './scorecard.component';
   ],
   declarations: [
     ScorecardComponent
-  ]
+  ],
+  providers: [ScoreCardService]
 })
 export class ScorecardModule { }

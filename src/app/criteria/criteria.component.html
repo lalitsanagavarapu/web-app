@@ -1,110 +1,117 @@
 <div class="container">
   <mat-card>
-      <form>
-          <div fxLayout="row wrap" fxLayoutGap="2%" fxLayout.lt-md="column">
+    <form>
+      <div>
+        <div>
+          <mat-form-field fxFlex="24%">
+            <mat-label>Feature</mat-label>
+            <mat-select [(ngModel)]="criteriaObject.feature" name="feature" (selectionChange)="onFeatureSelection()">
+              <mat-option *ngFor="let feat of featureData" [value]="feat.feature">
+                {{ feat.feature }}
+              </mat-option>
+            </mat-select>
+
+          </mat-form-field>
+
+          <span fxFlex="4%" fxHide.lt-md></span>
+
+          <mat-form-field fxFlex="24%">
+            <mat-label>Category</mat-label>
+            <input matInput [(ngModel)]="criteriaObject.category" name="category" disabled="true">
+          </mat-form-field>
+          <span fxFlex="4%" fxHide.lt-md></span>
+
+          <mat-form-field fxFlex="24%">
+            <mat-label>Product</mat-label>
+            <mat-select [(ngModel)]="criteriaObject.product" name="product">
+              <mat-option *ngFor="let product of productData" [value]="product">
+                {{ product }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </div>
+        <div>
+          <span class="error-width">This field is mandatory feature</span>
+          <span class="error-width"></span>
+          <span class="error-width">This field is mandatory product</span>
+        </div>
 
 
-            <mat-form-field fxFlex="24%">
-              <mat-label>Feature</mat-label>
-              <mat-select [(ngModel)] = "criteriaObject.feature" name="feature" (selectionChange)="onFeatureSelection()">
-                <mat-option *ngFor="let feat of featureData" [value]="feat.feature" >
-                  {{ feat.feature }}
-                </mat-option>
-              </mat-select>
+        <div>
+          <span fxFlex="90%" fxHide.lt-md></span>
+
+          <mat-label>Data Source</mat-label>
+          <mat-radio-group fxLayout="row" fxLayoutGap="20px" [(ngModel)]="criteriaObject.datasource" name="datasource">
+            <mat-radio-button value="XML">XML</mat-radio-button>
+            <mat-radio-button value="JSON">JSON</mat-radio-button>
+            <mat-radio-button value="SQL">SQL</mat-radio-button>
+
+
+          </mat-radio-group>
+        </div>
+
+        <span fxFlex="48%" fxHide.lt-md></span>
+
+        <div>
+          <div>
+            <mat-form-field fxFlex="48%">
+              <mat-label>SQL/API</mat-label>
+              <input type="textarea" matInput [(ngModel)]="criteriaObject.sqlapi" name="sqlapi">
             </mat-form-field>
+            <span fxFlex="48%" fxHide.lt-md></span>
+          </div>
+          <div>
+            <span>This field is mandatory</span>
 
-            <span fxFlex="4%" fxHide.lt-md></span>
+          </div>
 
-            <mat-form-field fxFlex="24%">
-              <mat-label>Category</mat-label>
-              <input  matInput [(ngModel)] = "criteriaObject.category" name="category" disabled="true">
-            </mat-form-field>
-              <span fxFlex="4%" fxHide.lt-md></span>
-
-              <mat-form-field fxFlex="24%">
-                  <mat-label>Product</mat-label>
-                  <mat-select [(ngModel)] = "criteriaObject.product" name="product">
-                    <mat-option *ngFor="let product of productData" [value]="product">
-                      {{ product }}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-
-              <span fxFlex="90%" fxHide.lt-md></span>
-
-              <mat-label>Data Source</mat-label>
-              <mat-radio-group fxLayout="row" fxLayoutGap="20px" [(ngModel)] = "criteriaObject.datasource" name="datasource">
-                  <mat-radio-button value="XML">XML</mat-radio-button>
-                  <mat-radio-button value="JSON">JSON</mat-radio-button>
-                  <mat-radio-button value="SQL">SQL</mat-radio-button>
-              </mat-radio-group>
-
-              <span fxFlex="48%" fxHide.lt-md></span>
+        </div>
 
 
-              <mat-form-field fxFlex="48%">
-                  <mat-label>SQL/API</mat-label>
-                  <input type="textarea" matInput [(ngModel)] = "criteriaObject.sqlapi" name="sqlapi">
-              </mat-form-field>
+        <div>
+          <div fxFlex="18%">
+            <mat-checkbox labelPosition="before">Statistical Criteria</mat-checkbox>
+          </div>
 
-              <span fxFlex="48%" fxHide.lt-md></span>
-
-
-              <span fxFlex="48%" fxHide.lt-md></span>
-
-              <div fxFlex="18%">
-                  <mat-checkbox labelPosition="before">Statistical Criteria</mat-checkbox>
-              </div>
-
-              <!-- <span fxFlex="78%" fxHide.lt-md></span> -->
-<!--
-              <div class="example-container mat-elevation-z8">
-              <mat-table #table [dataSource]="dataTable" >
-                    <ng-container matColumnDef="criteria">
-                      <mat-header-cell *matHeaderCellDef > Criteria </mat-header-cell>
-                      <mat-cell *matCellDef="let row"> {{row.criteria}} </mat-cell>
-                    </ng-container>
-                    <ng-container matColumnDef="score">
-                      <mat-header-cell *matHeaderCellDef > Score </mat-header-cell>
-                      <mat-cell *matCellDef="let row"> {{row.score}} </mat-cell>
-                    </ng-container>
-
-                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-
-
-              </mat-table>
+          <span fxFlex="38%" fxHide.lt-md></span>
+        </div>
+      </div>
+      <div class="row rowstyle" style="display: flex;width: 100%;">
+        <div class="columnssm4">Criteria</div>
+        <div class="columnssm4">Score</div>
+      </div>
+      <!-- <div class="row rowstyle">
+              <div class="columnssm4">Criteria</div>
+              <div class="col-sm-4">Score</div>
             </div> -->
-              <span fxFlex="38%" fxHide.lt-md></span>
+      <div class="row" *ngFor="let sc of criteriaObject.scoreCriteria; let i = index">
+        <div>
+          <mat-form-field>
+            <input matInput [(ngModel)]="sc.criteria" name="criteria{{i}}" id="criteria{{i}}" disabled="false">
+            <!-- <div *ngIf="sc.errorflag">
+                  Please enter a valid email address
+                </div> -->
+          </mat-form-field>
 
-              <button mat-raised-button (click)="addRow()"> Add Row </button>
-              <!-- <button mat-raised-button (click)="removeRow()"> Remove Row </button> -->
+          <mat-form-field>
+            <input matInput [(ngModel)]="sc.score" name="score{{i}}" id="score{{i}}" disabled="false">
+          </mat-form-field>
+        </div>
+        <div class="row rowstyle" style="display: flex;width: 100%;color: red;margin-top: -15px;">
+          <div *ngIf="sc.errorflag" class="error-msg">This field cannot be left empty</div>
+          <div *ngIf="sc.errorflag" class="error-msg">This field cannot be empty</div>
+        </div>
+      </div>
+      <div class="row">
+        <button mat-raised-button (click)="addRow()"> Add Row </button>
+      </div>
+      <mat-card-actions fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="5px">
+        <button mat-raised-button color="accent" [routerLink]="['/criteriadetails']">Get</button>
+        <button type="button" mat-raised-button [routerLink]="['../']">Cancel</button>
+        <button mat-raised-button color="primary" [routerLink]="['/criteriadetails']" (click)="submitCriteria()">Submit</button>
+      </mat-card-actions>
 
-
-
-          </div>
-          <div class="row">
-            <div class="col-sm-4">Criteria</div>
-            <div class="col-sm-4">Score</div>
-          </div>
-          <div class="row" *ngFor="let sc of criteriaObject.scoreCriteria; let i = index">
-            <mat-form-field >
-              <input  matInput [(ngModel)] = "sc.criteria" name="criteria{{i}}" id="criteria{{i}}" disabled="false">
-            </mat-form-field>
-
-            <mat-form-field >
-              <input  matInput [(ngModel)] = "sc.score" name="score{{i}}" id="score{{i}}" disabled="false">
-            </mat-form-field>
-
-            <!-- <div class="col-sm-4">{{row.criteria}}</div>
-            <div class="col-sm-4">{{row.score}}</div> -->
-          </div>
-          <mat-card-actions fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="5px">
-                  <button mat-raised-button color="accent" [routerLink]="['/criteriadetails']">Get</button>
-                  <button type="button" mat-raised-button [routerLink]="['../']">Cancel</button>
-                  <button mat-raised-button color="primary" (click)="submitCriteria()">Submit</button>
-              </mat-card-actions>
-
-      </form>
+    </form>
   </mat-card>
 </div>

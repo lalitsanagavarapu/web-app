@@ -30,16 +30,16 @@ export class ConfigService {
             product : criteriaObj.product,
             weightage : criteriaObj.weightage,
             // colour1: criteriaObj.feature,
-            greenmin: criteriaObj.greenmin,
-            greenmax: criteriaObj.greenmax,
+            greenmin: criteriaObj.greenmin.toString(),
+            greenmax: criteriaObj.greenmax.toString(),
 
             // colour2: criteriaObj.feature,
-            ambermin: criteriaObj.ambermin,
-            ambermax: criteriaObj.ambermax,
+            ambermin: criteriaObj.ambermin.toString(),
+            ambermax: criteriaObj.ambermax.toString(),
 
             // colour3: criteriaObj.feature,
-            redmin: criteriaObj.redmin,
-            redmax: criteriaObj.redmax,
+            redmin: criteriaObj.redmin.toString(),
+            redmax: criteriaObj.redmax.toString(),
             id: criteriaObj.id
 
         }
@@ -73,5 +73,13 @@ export class ConfigService {
                     console.log('success ');
                 }
             );
+    }
+    public readJSONfile(successcallback){
+      this._httpService.getRequest("/assets/json-resources/products.json").subscribe(
+        (data) =>{
+          successcallback(data);
+        console.log(data);
+        // this.products = data;
+      });
     }
 }

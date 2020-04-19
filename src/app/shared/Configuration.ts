@@ -20,7 +20,8 @@ const SERVICE_URLS_MAP = {
     saveCriteria : 'criteria/saveCriteria',
     getOneFeature: 'feature/getByFeatureId',
     getOneConfig: 'config/getByConfigId?tenantIdentifier=default',
-    getFeatureCatgory: 'feature/featureNCategory'
+    getFeatureCatgory: 'feature/featureNCategory',
+    getScore: 'score/calc'
 
 };
 

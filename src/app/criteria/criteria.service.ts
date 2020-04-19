@@ -45,4 +45,12 @@ export class CriteriaService {
                 }
             );
     }
+    public readJSONfile(successcallback){
+      this._httpService.getRequest("/assets/json-resources/products.json").subscribe(
+        (data) =>{
+          successcallback(data);
+        console.log(data);
+        // this.products = data;
+      });
+    }
 }

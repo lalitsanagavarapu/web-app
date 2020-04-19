@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Agriculture",
+    "value": "agriculture"
+},{
+  "name": "Capital",
+  "value": "capital"
+},{
+  "name": "Personal",
+  "value": "personal"
+},{
+  "name": "Ratio",
+  "value": "ratio"
+}
+]
